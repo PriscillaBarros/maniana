@@ -110,8 +110,7 @@ public final class DateUtil {
         }
 
         // Set day to end of month
-        t.monthDay = 1; // temporary, have a valid date
-        t.monthDay = t.getActualMaximum(Time.MONTH_DAY);
+        t.monthDay = t.getActualMaximum(Time.MONTH_DAY);                                  
     }
 
     /** Return true if ok. t is not changed otherwise. */

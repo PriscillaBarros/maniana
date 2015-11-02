@@ -76,7 +76,7 @@ public class ItemColorsPreference extends Preference implements
     }
 
     public void setValue(final String newValue) {
-        if (newValue != mValue) {
+        if (!newValue.equals(mValue)) {
             mValue = newValue;
             if (shouldPersist()) {
                 persistString(mValue);

@@ -84,10 +84,13 @@ public class AlphaPatternDrawable extends Drawable {
 
         int height = bounds.height();
         int width = bounds.width();
+        
+        double squareHorizontal = (width / mSquareSizePixels);
+        double squareVertical = (height / mSquareSizePixels);
 
         // Determine actual number of horizontal and vertical square (no fractions).
-        numRectanglesHorizontal = (int) Math.ceil((width / mSquareSizePixels));
-        numRectanglesVertical = (int) Math.ceil(height / mSquareSizePixels);
+        numRectanglesHorizontal = (int) Math.ceil(squareHorizontal);
+        numRectanglesVertical = (int) Math.ceil(squareVertical);
 
         generatePatternBitmap();
     }

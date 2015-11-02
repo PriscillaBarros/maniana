@@ -329,6 +329,7 @@ public class DragSortListView extends ListView {
      * drag-sort animations are turned on). Nearly 1 means the item is at the top of the slide
      * region (nearly full blank item is directly below).
      */
+    
     private float mSlideFrac = 0.0f;
 
     /**
@@ -896,6 +897,7 @@ public class DragSortListView extends ListView {
 
         int oldFirstExpPos = mFirstExpPos;
         int oldSecondExpPos = mSecondExpPos;
+        
         float oldSlideFrac = mSlideFrac;
 
         if (mAnimate) {
@@ -951,8 +953,8 @@ public class DragSortListView extends ListView {
             mSecondExpPos = itemPos;
         }
 
-        if (mFirstExpPos != oldFirstExpPos || mSecondExpPos != oldSecondExpPos
-                || mSlideFrac != oldSlideFrac) {
+        if (mFirstExpPos != oldFirstExpPos || mSecondExpPos != oldSecondExpPos          
+                || (!(Float.compare(mSlideFrac, oldSlideFrac)== 0)) ){
             updated = true;
         }
 
